@@ -1,0 +1,23 @@
+[all:vars]
+ansible_connection=local
+keycloak_host=https://auth.prod.example.com
+keycloak_admin_user=admin
+keycloak_admin_password={{ vault_keycloak_admin_password }}
+
+[realms]
+# Production realm configuration
+myrealm_prod ansible_host=auth.prod.example.com
+
+[identity_providers]
+# Production identity providers
+google_prod ansible_host=auth.prod.example.com
+azure_prod ansible_host=auth.prod.example.com
+
+[postgresql]
+# Production database
+keycloak_db_prod ansible_host=postgres.prod.example.com ansible_user=postgres
+
+[monitoring]
+# Production monitoring
+prometheus_prod ansible_host=monitoring.prod.example.com
+grafana_prod ansible_host=dashboard.prod.example.com

@@ -1,0 +1,23 @@
+[all:vars]
+ansible_connection=local
+keycloak_host=https://auth.stage.example.com
+keycloak_admin_user=admin
+keycloak_admin_password={{ vault_keycloak_admin_password }}
+
+[realms]
+# Staging realm configuration
+myrealm_stage ansible_host=auth.stage.example.com
+
+[identity_providers]
+# Staging identity providers
+google_stage ansible_host=auth.stage.example.com
+azure_stage ansible_host=auth.stage.example.com
+
+[postgresql]
+# Staging database
+keycloak_db_stage ansible_host=postgres.stage.example.com ansible_user=postgres
+
+[monitoring]
+# Staging monitoring
+prometheus_stage ansible_host=monitoring.stage.example.com
+grafana_stage ansible_host=dashboard.stage.example.com

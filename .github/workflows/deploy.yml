@@ -1,0 +1,17 @@
+name: Deploy Keycloak
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+      - run: terraform init && terraform apply -auto-approve
+        working-directory: ./terraform
+      - uses: ansible/ansible-action@master
+        with:
+          playbook: ansible/playbooks/keycloak-config.yml

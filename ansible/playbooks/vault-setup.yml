@@ -1,0 +1,10 @@
+---
+- name: Configure Vault for Keycloak
+  hosts: localhost
+  tasks:
+    - name: Enable KV secrets engine
+      community.hashi_vault.vault_secrets_engine:
+        name: "keycloak"
+        backend_type: "kv-v2"
+        options:
+          version: "2"

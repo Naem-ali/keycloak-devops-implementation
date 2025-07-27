@@ -1,0 +1,25 @@
+---
+- name: Configure Keycloak
+  hosts: localhost
+  tasks:
+    - name: Create Realm
+      community.general.keycloak_realm:
+        auth_keycloak_url: "https://auth.example.com"
+        auth_realm: "master"
+        auth_username: "admin"
+        auth_password: "{{ keycloak_admin_password }}"
+        state: present
+        realm:
+          id: "myrealm"
+          realm: "myrealm"
+          enabled: true
+
+    - name: Configure Google Identity Provider
+      community.general.keycloak_identity_provider:
+        realm: "myrealm"
+        alias: "google"
+        provider_id: "google"
+        enabled: true
+        config:
+          clientId: "{{ google_client_id }}"
+          clientSecret: "{{ google_client_secret }}"

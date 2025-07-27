@@ -1,0 +1,35 @@
+keycloak-devops-implementation/
+│
+├── .github/
+│   └── workflows/
+│       ├── deploy.yml
+│       └── terraform-plan.yml
+│
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── providers.tf
+│
+├── kubernetes/
+│   ├── keycloak/
+│   │   ├── values.yaml
+│   │   └── ingress.yaml
+│   └── monitoring/
+│       ├── prometheus.yaml
+│       └── grafana.yaml
+│
+├── ansible/
+│   ├── playbooks/
+│   │   ├── keycloak-config.yml
+│   │   └── vault-setup.yml
+│   └── inventory/
+│       ├── production
+│       └── staging
+│
+├── scripts/
+│   ├── init-keycloak.sh
+│   └── backup-keycloak.sh
+│
+├── .gitignore
+└── README.md

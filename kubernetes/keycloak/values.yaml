@@ -1,0 +1,18 @@
+replicaCount: 2
+
+auth:
+  adminUser: admin
+  adminPassword: "changeme"
+
+postgresql:
+  enabled: true
+  auth:
+    postgresPassword: "postgres"
+    username: "keycloak"
+    password: "keycloak"
+
+ingress:
+  enabled: true
+  hostname: "auth.example.com"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
