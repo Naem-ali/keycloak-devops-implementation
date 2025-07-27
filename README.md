@@ -116,17 +116,6 @@ style Tools fill:#e8a87c,color:#000
 
 ## 🎮 Fun Corner
 
-```
-    ,o88888o.    
-   ,8P     `Y8.  
-  ,8P       `Y8. 
-  88         88  
-  88         88  
-  `8b       d8'  
-   `8b     d8'   
-    `Y88888P'    
-```
-
 > "DevOps is not a goal, but a never-ending process of continual improvement"
 >                                                  — Jez Humble
 
